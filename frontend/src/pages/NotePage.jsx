@@ -57,7 +57,7 @@ const NotePage = () => {
     } else if (params.id === "new" && note.body !== null) {
       await createNote();
     }
-    history("/");
+    setTimeout(history("/"), 50);
   };
 
   let handleChange = (value) => {

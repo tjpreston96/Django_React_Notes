@@ -5,7 +5,7 @@ import { ReactComponent as ArrowLeft } from "../assets/arrow-left.svg";
 const NotePage = () => {
   const [note, setNote] = useState(null);
   let params = useParams();
-  let history = useNavigate();
+  let navigate = useNavigate();
 
   useEffect(() => {
     getNote();
@@ -46,7 +46,7 @@ const NotePage = () => {
         "Content-Type": "application/json",
       },
     });
-    history("/");
+    navigate("/");
   };
 
   let handleSubmit = async () => {
@@ -57,7 +57,7 @@ const NotePage = () => {
     } else if (params.id === "new" && note.body !== null) {
       await createNote();
     }
-    setTimeout(history("/"), 50);
+    setTimeout(navigate("/"), 50);
   };
 
   let handleChange = (value) => {

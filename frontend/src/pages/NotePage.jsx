@@ -49,14 +49,14 @@ const NotePage = () => {
     history("/");
   };
 
-  let handleSubmit = () => {
+  let handleSubmit = async () => {
     console.log(note.body);
     if (params.id !== "new" && note.body === "") {
-      deleteNote();
+       await deleteNote();
     } else if (params.id !== "new") {
-      updateNote();
+      await updateNote();
     } else if (params.id === "new" && note.body !== null) {
-      createNote();
+      await createNote();
     }
     history("/");
   };

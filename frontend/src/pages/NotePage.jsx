@@ -51,7 +51,7 @@ const NotePage = () => {
 
   let handleSubmit = async () => {
     if (params.id !== "new" && note.body === "") {
-       await deleteNote();
+      await deleteNote();
     } else if (params.id !== "new") {
       await updateNote();
     } else if (params.id === "new" && note.body !== null) {
